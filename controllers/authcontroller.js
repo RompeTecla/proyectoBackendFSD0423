@@ -1,3 +1,5 @@
+const { User } = require('../models');
+const bcrypt = require ('bcrypt');
 const authController = {};
 
 authController.register = async(req,res) => {
@@ -21,6 +23,24 @@ authController.register = async(req,res) => {
 
     return res.send(newUser);
 }
+
+authController.login = async (req, res) => {
+    try {
+        const { email, pasword } = req.body;
+
+        const user = await User.findOne({
+            where: {
+                email: email
+            }
+        })
+
+        return res.send('User logged');
+    } catch (error) {
+        return res.send('Something went wrong login user ' + error.message)
+    }
+}
+console.log(user)
+
 
 
 
