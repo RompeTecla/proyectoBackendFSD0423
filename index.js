@@ -4,6 +4,7 @@ const { User } = require('./models');
 const bcrypt = require('bcrypt');
 const authController = require('../controllers/authController');
 const router = require("./router");
+const userController = require("./controllers/userController");
 
 
 const app = express();
@@ -20,7 +21,7 @@ app.get('/health', (req,res) => {    //PRIMER ENDPOINT DE PRUEBA
 });
 
 
-app.post('/register', )
+// app.post('/register', )
 
 
 
